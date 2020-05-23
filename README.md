@@ -19,3 +19,10 @@ Copyright c  2020
   --version                Display version information.
 
 ```
+
+
+On the javascript side you should call the proxy with a queyrparameter called URL, with the URL you want to access
+
+Ex:
+
+```http://localhost:19191?url=https://google.com```
