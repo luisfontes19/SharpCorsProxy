@@ -26,3 +26,8 @@ On the javascript side you should call the proxy with a queyrparameter called UR
 Ex:
 
 ```http://localhost:19191?url=https://google.com```
+
+
+## License
+
+This project is [MIT](https://github.com/luisfontes19/SharpCorsProxy/blob/master/LICENSE) Licenced
