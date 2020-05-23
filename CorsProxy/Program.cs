@@ -29,6 +29,7 @@ namespace CorsProxy
 
             [Option('k', "keep-user-agent", Required = false, HelpText = "Keep User Agent", Default = false)]
             public bool KeepUserAgent { get; set; }
+
         }
 
 
@@ -37,18 +38,21 @@ namespace CorsProxy
 
             Parser.Default.ParseArguments<Options>(args).WithParsed<Options>(o =>
             {
+            
+
                 SERVER_ADDRESS = o.Address;
                 SERVER_PORT = o.Port;
                 TIMEOUT = o.Timeout;
                 KEEP_USER_AGENT = o.KeepUserAgent;
+
+                String addr = "http://" + SERVER_ADDRESS + ":" + SERVER_PORT;
+                Console.WriteLine("Starting webserver at " + addr);
+                WebApp.Start<Startup>(url: addr);
+
+                while (true) ;
+
             });
 
-
-            String addr = "http://" + SERVER_ADDRESS + ":" + SERVER_PORT;
-            Console.WriteLine("Starting webserver at " + addr);
-            WebApp.Start<Startup>(url: addr);
-
-            while (true) ;
 
         }
     }

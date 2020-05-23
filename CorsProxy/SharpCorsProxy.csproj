@@ -7,7 +7,7 @@
     <ProjectGuid>{D7705F48-700C-45B9-B09F-2CD778F70892}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CorsProxy</RootNamespace>
-    <AssemblyName>CorsProxy</AssemblyName>
+    <AssemblyName>SharpCorsProxy</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
