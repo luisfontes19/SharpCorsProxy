@@ -1,6 +1,6 @@
 # SharpCorsProxy
 
-![Banner](https://raw.githubusercontent.com/luisfontes19/SharpCorsProxy/fa107b2422c1cb8ee7752dee886d592de28c5fb7/SharpCorsProxy.png)
+![Banner](https://raw.githubusercontent.com/luisfontes19/SharpCorsProxy/master/SharpCorsProxy.png)
 
 ## Usage
 
