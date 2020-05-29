@@ -19,11 +19,18 @@ namespace CorsProxy
 
         private HttpResponseMessage setCorsHeaders(HttpResponseMessage response)
         {
+
+            //these headers can be set in the response, so remove them, and and our own headers
+            response.Headers.Remove("Access-Control-Allow-Origin");
+            response.Headers.Remove("Access-Control-Allow-Credentials");
+
+
             response.Headers.Add("Access-Control-Allow-Methods", "*");
             response.Headers.Add("Access-Control-Allow-Headers", "*");
             response.Headers.Add("Access-Control-Allow-Origin", "*");
             response.Headers.Add("Access-Control-Allow-Credentials", "true");
             response.Headers.Add("Access-Control-Max-Age", "86400");
+            
 
             return response;
         }
