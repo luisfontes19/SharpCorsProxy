@@ -13,7 +13,7 @@ namespace CorsProxy
 
         public static String SERVER_ADDRESS = "127.0.0.1";
         public static int SERVER_PORT = 19191;
-        public static int TIMEOUT = 30;
+        public static int TIMEOUT = 30*1000;
         public static bool KEEP_USER_AGENT = false;
 
         public class Options
@@ -24,8 +24,8 @@ namespace CorsProxy
             [Option('p', "port", Required = false, HelpText = "Port on which to run the proxy", Default = 19191)]
             public int Port{ get; set; }
 
-            [Option('t', "timeout", Required = false, HelpText = "Number os seconds to wait for a response", Default = 30)]
-            public int Timeout { get; set; }
+            //[Option('t', "timeout", Required = false, HelpText = "Number os seconds to wait for a response", Default = 30)]
+            //public int Timeout { get; set; }
 
             [Option('k', "keep-user-agent", Required = false, HelpText = "Keep User Agent", Default = false)]
             public bool KeepUserAgent { get; set; }
@@ -42,7 +42,7 @@ namespace CorsProxy
 
                 SERVER_ADDRESS = o.Address;
                 SERVER_PORT = o.Port;
-                TIMEOUT = o.Timeout;
+                //TIMEOUT = o.Timeout;
                 KEEP_USER_AGENT = o.KeepUserAgent;
 
                 String addr = "http://" + SERVER_ADDRESS + ":" + SERVER_PORT;

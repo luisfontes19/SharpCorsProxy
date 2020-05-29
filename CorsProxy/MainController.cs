@@ -76,7 +76,7 @@ namespace CorsProxy
             StreamReader reader = new StreamReader(body);
             string wsdl = reader.ReadToEnd();
             
-            wsdl = wsdl.Replace("\"" + host, "\"" + Program.SERVER_ADDRESS + "?url=" + host);
+            wsdl = wsdl.Replace("\"" + host, "\"http://" + Program.SERVER_ADDRESS + ":" + Program.SERVER_PORT + "?url=" + host);
             
             byte[] byteArray = Encoding.ASCII.GetBytes(wsdl);
             MemoryStream stream = new MemoryStream(byteArray);
@@ -142,7 +142,6 @@ namespace CorsProxy
 
             HttpClientHandler handler = new HttpClientHandler() { AutomaticDecompression = dm };
             HttpClient client = new HttpClient(handler);
-            client.Timeout =new TimeSpan(Program.TIMEOUT*1000 * 100);
 
             proxyResponse = await client.SendAsync(proxyRequest);
 
